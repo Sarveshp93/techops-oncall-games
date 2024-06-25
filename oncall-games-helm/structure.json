@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "path": "history-rollback" },
+    { "path": "override-values" },
+    { "path": "conditional-deployment" }
+  ]
+}
+
