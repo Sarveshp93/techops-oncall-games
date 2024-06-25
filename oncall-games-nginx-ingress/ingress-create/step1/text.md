@@ -11,7 +11,7 @@ First: create ClusterIP *Services* for both *Deployments* for port `80`. The *Se
 <br>
 
 ```plain
-k expose deploy -h
+k expose -h
 ```
 
 </details>

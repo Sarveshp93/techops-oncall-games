@@ -1,6 +1,6 @@
 {
   "title": "Deployment Basics",
-  "description": "Learn to work with deployments",
+  "description": "Basic oncall assesment with deployments",
   "details": {
     "intro": {
       "text": "intro.md"

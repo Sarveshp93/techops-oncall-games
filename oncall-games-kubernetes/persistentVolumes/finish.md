@@ -3,4 +3,4 @@
 
 ### WELL DONE !
 
-You solved this challenge!
+You solved this oncall game challenge!
