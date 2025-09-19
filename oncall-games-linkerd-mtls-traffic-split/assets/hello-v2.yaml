@@ -25,18 +25,3 @@ metadata:
 spec:
   selector: {app: hello, version: v2}
   ports: [{port: 80, targetPort: 8080}]
-
-assets/trafficsplit.yaml
-
-apiVersion: split.smi-spec.io/v1alpha2
-kind: TrafficSplit
-metadata:
-  name: hello
-  namespace: demo
-spec:
-  service: hello
-  backends:
-  - service: hello-v1
-    weight: 90
-  - service: hello-v2
-    weight: 10
