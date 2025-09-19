@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 source /opt/k8s.sh
-log "Init: RBAC oncall scenario"
+log "Init RBAC scenario"
 wait_apiserver
 ensure_ns oncall
 kubectl -n oncall create sa oncall >/dev/null 2>&1 || true
 TOKEN=$(kubectl -n oncall create token oncall 2>/dev/null || true)
 SERVER=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}')
-KCFG=/root/.kube/oncall.conf
 mkdir -p /root/.kube
-cat >"$KCFG"<<EOF
+cat >/root/.kube/oncall.conf <<EOF
 apiVersion: v1
 kind: Config
 clusters:
@@ -28,9 +27,7 @@ users:
   user:
     token: ${TOKEN}
 EOF
-ensure_ns foo
-kubectl -n foo create deploy nginx --image=nginx:1.25 --replicas=1 >/dev/null 2>&1 || true
-rollout_wait_all foo
-log "RBAC scenario ready."
+kubectl apply -f /opt/sample-workload.yaml >/dev/null 2>&1 || true
+log "RBAC scenario ready"
 touch /opt/INIT_DONE
 log "INIT_DONE"

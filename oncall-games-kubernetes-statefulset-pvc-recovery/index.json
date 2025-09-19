@@ -9,15 +9,18 @@
     "steps": [
       {
         "title": "Seed data on the volume",
-        "text": "01-seed.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
         "title": "Delete the Pod and verify data",
-        "text": "02-delete-pod.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "Scale down to 0 and back to 1",
-        "text": "03-scale-recreate.md"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       }
     ],
     "finish": {
@@ -41,13 +44,23 @@
           "chmod": "+x"
         },
         {
-          "file": "999-verify.sh",
-          "target": "/opt/verify.sh",
+          "file": "step1/verify.sh",
+          "target": "/opt/verify-step1.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "step2/verify.sh",
+          "target": "/opt/verify-step2.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "step3/verify.sh",
+          "target": "/opt/verify-step3.sh",
           "chmod": "+x"
         },
         {
           "file": "statefulset.yaml",
-          "target": "/opt/assets/statefulset.yaml"
+          "target": "/opt/statefulset.yaml"
         }
       ]
     }

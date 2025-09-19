@@ -1,6 +1,6 @@
 {
   "title": "K8s: RBAC \u2013 Fix the Oncall kubeconfig",
-  "description": "On-call account lost visibility. Restore read access without writes.",
+  "description": "On-call account lost visibility. Restore read access across namespaces without granting writes.",
   "details": {
     "intro": {
       "text": "00-intro.md",
@@ -9,11 +9,13 @@
     "steps": [
       {
         "title": "See the failure",
-        "text": "01-fail.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
         "title": "Grant least-privilege",
-        "text": "02-fix-rbac.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       }
     ],
     "finish": {
@@ -37,9 +39,18 @@
           "chmod": "+x"
         },
         {
-          "file": "999-verify.sh",
-          "target": "/opt/verify.sh",
+          "file": "step1/verify.sh",
+          "target": "/opt/verify-step1.sh",
           "chmod": "+x"
+        },
+        {
+          "file": "step2/verify.sh",
+          "target": "/opt/verify-step2.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "sample-workload.yaml",
+          "target": "/opt/sample-workload.yaml"
         }
       ]
     }

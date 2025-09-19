@@ -1,1 +1,1 @@
-✅ Scenario complete. You can now run `/opt/verify.sh` to validate your solution.
+✅ The PVC retained your data across delete/recreate and scale-to-zero.

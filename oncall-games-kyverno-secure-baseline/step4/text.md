@@ -1,0 +1,1 @@
+Apply generate policy, create a new ns, and check for default-deny NP.

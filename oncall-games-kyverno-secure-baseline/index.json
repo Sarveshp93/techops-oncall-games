@@ -9,19 +9,23 @@
     "steps": [
       {
         "title": "Install Kyverno",
-        "text": "01-install-kyverno.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
         "title": "Validate: allowed registries",
-        "text": "02-validate-registries.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "Mutate: add securityContext",
-        "text": "03-mutate-securitycontext.md"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       },
       {
         "title": "Generate: default NetworkPolicy",
-        "text": "04-generate-np.md"
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
       }
     ],
     "finish": {
@@ -45,8 +49,23 @@
           "chmod": "+x"
         },
         {
-          "file": "999-verify.sh",
-          "target": "/opt/verify.sh",
+          "file": "step1/verify.sh",
+          "target": "/opt/verify-step1.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "step2/verify.sh",
+          "target": "/opt/verify-step2.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "step3/verify.sh",
+          "target": "/opt/verify-step3.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "step4/verify.sh",
+          "target": "/opt/verify-step4.sh",
           "chmod": "+x"
         },
         {

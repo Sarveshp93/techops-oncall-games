@@ -9,15 +9,18 @@
     "steps": [
       {
         "title": "Install Linkerd",
-        "text": "01-install.md"
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       },
       {
-        "title": "Mesh and validate mTLS",
-        "text": "02-mesh-and-verify-mtls.md"
+        "title": "Mesh and verify mTLS",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "Apply TrafficSplit",
-        "text": "03-traffic-split.md"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       }
     ],
     "finish": {
@@ -26,36 +29,46 @@
     "assets": {
       "host01": [
         {
-          "file": "k8s.sh",
+          "file": "assets/k8s.sh",
           "target": "/opt/k8s.sh",
           "chmod": "+x"
         },
         {
-          "file": "init.sh",
+          "file": "assets/init.sh",
           "target": "/opt/init.sh",
           "chmod": "+x"
         },
         {
-          "file": "wait-init.sh",
+          "file": "assets/wait-init.sh",
           "target": "/opt/wait-init.sh",
           "chmod": "+x"
         },
         {
-          "file": "999-verify.sh",
-          "target": "/opt/verify.sh",
+          "file": "step1/verify.sh",
+          "target": "/opt/verify-step1.sh",
           "chmod": "+x"
         },
         {
-          "file": "hello-v1.yaml",
-          "target": "/opt/hello-v1.yaml"
+          "file": "step2/verify.sh",
+          "target": "/opt/verify-step2.sh",
+          "chmod": "+x"
         },
         {
-          "file": "hello-v2.yaml",
-          "target": "/opt/hello-v2.yaml"
+          "file": "step3/verify.sh",
+          "target": "/opt/verify-step3.sh",
+          "chmod": "+x"
         },
         {
-          "file": "trafficsplit.yaml",
-          "target": "/opt/trafficsplit.yaml"
+          "file": "assets/hello-v1.yaml",
+          "target": "/opt/assets/hello-v1.yaml"
+        },
+        {
+          "file": "assets/hello-v2.yaml",
+          "target": "/opt/assets/hello-v2.yaml"
+        },
+        {
+          "file": "assets/trafficsplit.yaml",
+          "target": "/opt/assets/trafficsplit.yaml"
         }
       ]
     }
