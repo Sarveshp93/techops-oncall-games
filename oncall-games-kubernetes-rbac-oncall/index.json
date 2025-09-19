@@ -23,11 +23,11 @@
       "host01": [
         {
           "file": "assets/setup.sh",
-          "target": "/opt/setup.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
-          "file": "999-verify.sh",
+          "file": "../999-verify.sh",
           "target": "/opt/verify.sh",
           "chmod": "+x"
         }
