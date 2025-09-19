@@ -26,36 +26,27 @@
     "assets": {
       "host01": [
         {
-          "file": "assets/k8s.sh",
-          "target": "/opt/k8s.sh",
+          "file": "k8s.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
-          "file": "assets/init.sh",
-          "target": "/opt/init.sh",
+          "file": "init.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
-          "file": "assets/wait-init.sh",
-          "target": "/opt/wait-init.sh",
+          "file": "wait-init.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
-          "file": "999-verify.sh",
-          "target": "/opt/verify.sh",
-          "chmod": "+x"
+          "file": "app.yaml",
+          "target": "/opt/app.yaml"
         },
         {
-          "file": "assets/app.yaml",
-          "target": "/opt/assets/app.yaml"
-        },
-        {
-          "file": "assets/np-default-deny.yaml",
-          "target": "/opt/assets/np-default-deny.yaml"
-        },
-        {
-          "file": "assets/np-solution.yaml",
-          "target": "/opt/assets/np-solution.yaml"
+          "file": "np-default-deny.yaml",
+          "target": "/opt/np-default-deny.yaml"
         }
       ]
     }
