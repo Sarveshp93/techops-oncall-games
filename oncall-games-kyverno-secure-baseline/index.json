@@ -35,58 +35,58 @@
       "host01": [
         {
           "file": "k8s.sh",
-          "target": "/opt/k8s.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "init.sh",
-          "target": "/opt/init.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "wait-init.sh",
-          "target": "/opt/wait-init.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "step1/verify.sh",
-          "target": "/opt/verify-step1.sh",
+          "target": "/opt/step1/",
           "chmod": "+x"
         },
         {
           "file": "step2/verify.sh",
-          "target": "/opt/verify-step2.sh",
+          "target": "/opt/step2/",
           "chmod": "+x"
         },
         {
           "file": "step3/verify.sh",
-          "target": "/opt/verify-step3.sh",
+          "target": "/opt/step3/",
           "chmod": "+x"
         },
         {
           "file": "step4/verify.sh",
-          "target": "/opt/verify-step4.sh",
+          "target": "/opt/step4/",
           "chmod": "+x"
         },
         {
           "file": "policy-validate-registries.yaml",
-          "target": "/opt/policy-validate-registries.yaml"
+          "target": "/opt"
         },
         {
           "file": "policy-mutate-securitycontext.yaml",
-          "target": "/opt/policy-mutate-securitycontext.yaml"
+          "target": "/opt"
         },
         {
           "file": "policy-generate-np.yaml",
-          "target": "/opt/policy-generate-np.yaml"
+          "target": "/opt"
         },
         {
           "file": "bad-deploy.yaml",
-          "target": "/opt/bad-deploy.yaml"
+          "target": "/opt"
         },
         {
           "file": "good-deploy.yaml",
-          "target": "/opt/good-deploy.yaml"
+          "target": "/opt"
         }
       ]
     }

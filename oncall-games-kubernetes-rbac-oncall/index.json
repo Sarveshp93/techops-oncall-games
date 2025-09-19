@@ -25,32 +25,32 @@
       "host01": [
         {
           "file": "k8s.sh",
-          "target": "/opt/k8s.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "init.sh",
-          "target": "/opt/init.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "wait-init.sh",
-          "target": "/opt/wait-init.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "step1/verify.sh",
-          "target": "/opt/verify-step1.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "step2/verify.sh",
-          "target": "/opt/verify-step2.sh",
+          "target": "/opt",
           "chmod": "+x"
         },
         {
           "file": "sample-workload.yaml",
-          "target": "/opt/sample-workload.yaml"
+          "target": "/opt"
         }
       ]
     }
