@@ -1,0 +1,17 @@
+{
+  "title": "K8s: RBAC – Fix the Oncall kubeconfig",
+  "description": "On-call account lost visibility. Restore read access across namespaces without granting writes.",
+  "details": {
+    "intro": { "text": "00-intro.md" },
+    "steps": [
+      { "title": "See the failure", "text": "01-fail.md" },
+      { "title": "Grant least-privilege", "text": "02-fix-rbac.md" }
+    ],
+    "finish": { "text": "99-finish.md" },
+    "assets": { "host01": [
+      { "file": "assets/setup.sh", "target": "/opt/setup.sh", "chmod": "+x", "command": "bash /opt/setup.sh" },
+      { "file": "999-verify.sh", "target": "/opt/verify.sh", "chmod": "+x" }
+    ] }
+  },
+  "backend": { "imageid": "kubernetes" }
+}

@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: good, namespace: app}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: good}}
+  template:
+    metadata: {labels: {app: good}}
+    spec:
+      containers:
+      - name: c
+        image: docker.io/library/nginx:1.25
+        ports: [{containerPort: 80}]

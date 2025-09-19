@@ -1,0 +1,24 @@
+{
+  "title": "Kyverno: Secure Baseline (validate/mutate/generate)",
+  "description": "Block disallowed registries, auto-add securityContext, and create default NetworkPolicies for new namespaces.",
+  "details": {
+    "intro": { "text": "00-intro.md" },
+    "steps": [
+      { "title": "Install Kyverno", "text": "01-install-kyverno.md" },
+      { "title": "Validate: allowed registries", "text": "02-validate-registries.md" },
+      { "title": "Mutate: add securityContext", "text": "03-mutate-securitycontext.md" },
+      { "title": "Generate: default NetworkPolicy", "text": "04-generate-np.md" }
+    ],
+    "finish": { "text": "99-finish.md" },
+    "assets": { "host01": [
+      { "file": "assets/setup.sh", "target": "/opt/setup.sh", "chmod": "+x", "command": "bash /opt/setup.sh" },
+      { "file": "assets/policy-validate-registries.yaml", "target": "/opt/assets/policy-validate-registries.yaml" },
+      { "file": "assets/policy-mutate-securitycontext.yaml", "target": "/opt/assets/policy-mutate-securitycontext.yaml" },
+      { "file": "assets/policy-generate-np.yaml", "target": "/opt/assets/policy-generate-np.yaml" },
+      { "file": "assets/bad-deploy.yaml", "target": "/opt/assets/bad-deploy.yaml" },
+      { "file": "assets/good-deploy.yaml", "target": "/opt/assets/good-deploy.yaml" },
+      { "file": "999-verify.sh", "target": "/opt/verify.sh", "chmod": "+x" }
+    ] }
+  },
+  "backend": { "imageid": "kubernetes" }
+}

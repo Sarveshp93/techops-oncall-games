@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: mutate-add-securitycontext
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+  - name: add-secctx
+    match:
+      any:
+      - resources:
+          kinds: [Pod, Deployment]
+    mutate:
+      patchStrategicMerge:
+        spec:
+          securityContext:
+            runAsNonRoot: true
+          containers:
+          - (name): "*"
+            securityContext:
+              allowPrivilegeEscalation: false

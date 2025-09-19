@@ -1,0 +1,1 @@
+✅ Fixed with least privilege. Consider adding an **egress** default-deny and explicit egress rules from `team-a` too.
