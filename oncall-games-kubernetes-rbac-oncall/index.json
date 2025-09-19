@@ -22,15 +22,10 @@
     "assets": {
       "host01": [
         {
-          "file": "assets/setup.sh",
+          "file": "setup.sh",
           "target": "/opt",
           "chmod": "+x"
         },
-        {
-          "file": "../999-verify.sh",
-          "target": "/opt/verify.sh",
-          "chmod": "+x"
-        }
       ]
     }
   },
