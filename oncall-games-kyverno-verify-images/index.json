@@ -30,17 +30,17 @@
     "assets": {
       "host01": [
         {
-          "file": "assets/k8s.sh",
+          "file": "k8s.sh",
           "target": "/opt/k8s.sh",
           "chmod": "+x"
         },
         {
-          "file": "assets/init.sh",
+          "file": "init.sh",
           "target": "/opt/init.sh",
           "chmod": "+x"
         },
         {
-          "file": "assets/wait-init.sh",
+          "file": "wait-init.sh",
           "target": "/opt/wait-init.sh",
           "chmod": "+x"
         },
@@ -50,16 +50,16 @@
           "chmod": "+x"
         },
         {
-          "file": "assets/policy-verify-image.yaml",
-          "target": "/opt/assets/policy-verify-image.yaml"
+          "file": "policy-verify-image.yaml",
+          "target": "/opt/policy-verify-image.yaml"
         },
         {
-          "file": "assets/pod-unsigned.yaml",
-          "target": "/opt/assets/pod-unsigned.yaml"
+          "file": "pod-unsigned.yaml",
+          "target": "/opt/pod-unsigned.yaml"
         },
         {
-          "file": "assets/pod-signed.yaml",
-          "target": "/opt/assets/pod-signed.yaml"
+          "file": "pod-signed.yaml",
+          "target": "/opt/pod-signed.yaml"
         }
       ]
     }

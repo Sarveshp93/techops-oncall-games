@@ -30,17 +30,17 @@
     "assets": {
       "host01": [
         {
-          "file": "assets/k8s.sh",
+          "file": "k8s.sh",
           "target": "/opt/k8s.sh",
           "chmod": "+x"
         },
         {
-          "file": "assets/init.sh",
+          "file": "init.sh",
           "target": "/opt/init.sh",
           "chmod": "+x"
         },
         {
-          "file": "assets/wait-init.sh",
+          "file": "wait-init.sh",
           "target": "/opt/wait-init.sh",
           "chmod": "+x"
         },
@@ -50,24 +50,24 @@
           "chmod": "+x"
         },
         {
-          "file": "assets/policy-validate-registries.yaml",
-          "target": "/opt/assets/policy-validate-registries.yaml"
+          "file": "policy-validate-registries.yaml",
+          "target": "/opt/policy-validate-registries.yaml"
         },
         {
-          "file": "assets/policy-mutate-securitycontext.yaml",
-          "target": "/opt/assets/policy-mutate-securitycontext.yaml"
+          "file": "policy-mutate-securitycontext.yaml",
+          "target": "/opt/policy-mutate-securitycontext.yaml"
         },
         {
-          "file": "assets/policy-generate-np.yaml",
-          "target": "/opt/assets/policy-generate-np.yaml"
+          "file": "policy-generate-np.yaml",
+          "target": "/opt/policy-generate-np.yaml"
         },
         {
-          "file": "assets/bad-deploy.yaml",
-          "target": "/opt/assets/bad-deploy.yaml"
+          "file": "bad-deploy.yaml",
+          "target": "/opt/bad-deploy.yaml"
         },
         {
-          "file": "assets/good-deploy.yaml",
-          "target": "/opt/assets/good-deploy.yaml"
+          "file": "good-deploy.yaml",
+          "target": "/opt/good-deploy.yaml"
         }
       ]
     }

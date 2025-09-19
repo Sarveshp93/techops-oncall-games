@@ -26,17 +26,17 @@
     "assets": {
       "host01": [
         {
-          "file": "assets/k8s.sh",
+          "file": "k8s.sh",
           "target": "/opt/k8s.sh",
           "chmod": "+x"
         },
         {
-          "file": "assets/init.sh",
+          "file": "init.sh",
           "target": "/opt/init.sh",
           "chmod": "+x"
         },
         {
-          "file": "assets/wait-init.sh",
+          "file": "wait-init.sh",
           "target": "/opt/wait-init.sh",
           "chmod": "+x"
         },
@@ -46,16 +46,16 @@
           "chmod": "+x"
         },
         {
-          "file": "assets/hello-v1.yaml",
-          "target": "/opt/assets/hello-v1.yaml"
+          "file": "hello-v1.yaml",
+          "target": "/opt/hello-v1.yaml"
         },
         {
-          "file": "assets/hello-v2.yaml",
-          "target": "/opt/assets/hello-v2.yaml"
+          "file": "hello-v2.yaml",
+          "target": "/opt/hello-v2.yaml"
         },
         {
-          "file": "assets/trafficsplit.yaml",
-          "target": "/opt/assets/trafficsplit.yaml"
+          "file": "trafficsplit.yaml",
+          "target": "/opt/trafficsplit.yaml"
         }
       ]
     }
