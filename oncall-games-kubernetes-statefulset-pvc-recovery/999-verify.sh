@@ -10,7 +10,7 @@ OUT=$(kubectl -n datarec exec dataapp-0 -- sh -c "cat /data/marker.txt" 2>/dev/n
 [[ "$OUT" == "$MSG" ]] || fail "marker missing after pod recreation"
 kubectl -n datarec scale statefulset dataapp --replicas=0 >/dev/null
 sleep 2
-kubectl -n datarec scale statefulset dataapp --replicas=1 >/devnull 2>&1 || true
+kubectl -n datarec scale statefulset dataapp --replicas=1 >/dev/null 2>&1 || true
 kubectl -n datarec rollout status statefulset/dataapp --timeout=420s >/dev/null || true
 OUT2=$(kubectl -n datarec exec dataapp-0 -- sh -c "cat /data/marker.txt" 2>/dev/null || true)
 [[ "$OUT2" == "$MSG" ]] || fail "marker missing after scale cycle"

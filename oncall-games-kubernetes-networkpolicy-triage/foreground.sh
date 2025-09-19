@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo "🚀 Running scenario setup..."
-for i in $(seq 1 60); do
-  if kubectl get ns >/dev/null 2>&1; then break; fi
-  sleep 2
-done
-if [ -x /opt/setup.sh ]; then
-  bash /opt/setup.sh || true
-fi
-echo "✅ Setup complete."
+# Start init in background, log to /opt/init.log
+( bash /opt/init.sh >> /opt/init.log 2>&1 & echo $! > /opt/INIT_PID ) || true
+# Show live progress until INIT_DONE is touched
+bash /opt/wait-init.sh

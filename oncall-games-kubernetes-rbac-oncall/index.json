@@ -22,14 +22,29 @@
     "assets": {
       "host01": [
         {
-          "file": "setup.sh",
-          "target": "/opt",
+          "file": "assets/k8s.sh",
+          "target": "/opt/k8s.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "assets/init.sh",
+          "target": "/opt/init.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "assets/wait-init.sh",
+          "target": "/opt/wait-init.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "999-verify.sh",
+          "target": "/opt/verify.sh",
           "chmod": "+x"
         }
       ]
     }
   },
   "backend": {
-    "imageid": "kubernetes"
+    "imageid": "kubernetes-kubeadm-1node"
   }
 }

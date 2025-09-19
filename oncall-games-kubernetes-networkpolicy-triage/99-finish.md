@@ -1,1 +1,1 @@
-✅ Fixed with least privilege. Consider adding egress default-deny.
+✅ Fixed with least privilege. Consider an egress default-deny.

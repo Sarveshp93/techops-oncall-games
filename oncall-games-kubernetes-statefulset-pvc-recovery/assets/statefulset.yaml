@@ -9,15 +9,13 @@ spec:
   capacity: { storage: 1Gi }
   accessModes: ["ReadWriteOnce"]
   hostPath: { path: /mnt/data/dataapp-0 }
-  claimRef:
-    namespace: datarec
-    name: data-dataapp-0
+  claimRef: { namespace: datarec, name: data-dataapp-0 }
 ---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata: { name: dataapp, namespace: datarec }
 spec:
-  serviceName: "dataapp"
+  serviceName: dataapp
   replicas: 1
   selector: { matchLabels: { app: dataapp } }
   template:
@@ -33,11 +31,3 @@ spec:
     spec:
       accessModes: ["ReadWriteOnce"]
       resources: { requests: { storage: 1Gi } }
----
-apiVersion: v1
-kind: Service
-metadata: { name: dataapp, namespace: datarec }
-spec:
-  clusterIP: None
-  selector: { app: dataapp }
-  ports: [{ port: 80 }]
