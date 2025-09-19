@@ -1,15 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: hello-v2
-  namespace: demo
-  labels: {app: hello, version: v2}
+metadata: { name: hello-v2, namespace: demo, labels: {app: hello, version: v2} }
 spec:
   replicas: 1
   selector: {matchLabels: {app: hello, version: v2}}
   template:
-    metadata:
-      labels: {app: hello, version: v2}
+    metadata: { labels: {app: hello, version: v2} }
     spec:
       containers:
       - name: app
@@ -19,9 +15,7 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-metadata:
-  name: hello-v2
-  namespace: demo
+metadata: { name: hello-v2, namespace: demo }
 spec:
   selector: {app: hello, version: v2}
   ports: [{port: 80, targetPort: 8080}]

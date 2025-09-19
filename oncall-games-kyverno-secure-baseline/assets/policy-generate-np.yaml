@@ -1,14 +1,10 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
-metadata:
-  name: generate-default-np
+metadata: { name: generate-default-np }
 spec:
   rules:
   - name: ns-default-deny
-    match:
-      any:
-      - resources:
-          kinds: [Namespace]
+    match: { any: [ { resources: { kinds: [Namespace] } } ] }
     generate:
       kind: NetworkPolicy
       name: default-deny
@@ -17,8 +13,7 @@ spec:
       data:
         apiVersion: networking.k8s.io/v1
         kind: NetworkPolicy
-        metadata:
-          name: default-deny
+        metadata: { name: default-deny }
         spec:
           podSelector: {}
           policyTypes: [Ingress, Egress]

@@ -1,16 +1,12 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
-metadata:
-  name: validate-allowed-registries
+metadata: { name: validate-allowed-registries }
 spec:
   validationFailureAction: Enforce
   background: true
   rules:
   - name: only-allowed-registries
-    match:
-      any:
-      - resources:
-          kinds: [Pod, Deployment]
+    match: { any: [ { resources: { kinds: [Pod, Deployment] } } ] }
     validate:
       message: "Only docker.io and ghcr.io are allowed"
       pattern:

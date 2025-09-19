@@ -2,22 +2,55 @@
   "title": "K8s: NetworkPolicy Lockdown Triage",
   "description": "A recent lockdown broke cross-namespace traffic. Diagnose and craft the minimal allow rule.",
   "details": {
-    "intro": { "text": "00-intro.md" },
+    "intro": {
+      "text": "00-intro.md",
+      "code": "foreground.sh"
+    },
     "steps": [
-      { "title": "Reproduce the failure", "text": "01-reproduce.md" },
-      { "title": "Write the minimal allow policy", "text": "02-fix.md" },
-      { "title": "Harden and retest", "text": "03-harden.md" }
+      {
+        "title": "Reproduce the failure",
+        "text": "01-reproduce.md"
+      },
+      {
+        "title": "Write the minimal allow policy",
+        "text": "02-fix.md"
+      },
+      {
+        "title": "Harden and retest",
+        "text": "03-harden.md"
+      }
     ],
-    "finish": { "text": "99-finish.md" },
+    "finish": {
+      "text": "99-finish.md"
+    },
     "assets": {
       "host01": [
-        { "file": "assets/setup.sh", "target": "/opt/setup.sh", "chmod": "+x", "command": "bash /opt/setup.sh" },
-        { "file": "assets/app.yaml", "target": "/opt/assets/app.yaml" },
-        { "file": "assets/np-default-deny.yaml", "target": "/opt/assets/np-default-deny.yaml" },
-        { "file": "assets/np-solution.yaml", "target": "/opt/assets/np-solution.yaml" },
-        { "file": "999-verify.sh", "target": "/opt/verify.sh", "chmod": "+x" }
+        {
+          "file": "assets/setup.sh",
+          "target": "/opt/setup.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "assets/app.yaml",
+          "target": "/opt/assets/app.yaml"
+        },
+        {
+          "file": "assets/np-default-deny.yaml",
+          "target": "/opt/assets/np-default-deny.yaml"
+        },
+        {
+          "file": "assets/np-solution.yaml",
+          "target": "/opt/assets/np-solution.yaml"
+        },
+        {
+          "file": "999-verify.sh",
+          "target": "/opt/verify.sh",
+          "chmod": "+x"
+        }
       ]
     }
   },
-  "backend": { "imageid": "kubernetes" }
+  "backend": {
+    "imageid": "kubernetes"
+  }
 }

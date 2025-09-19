@@ -1,11 +1,8 @@
 apiVersion: v1
 kind: Pod
-metadata:
-  name: unsigned
-  namespace: prod-apps
+metadata: { name: unsigned, namespace: prod-apps }
 spec:
   containers:
   - name: c
     image: ghcr.io/kyverno/test-verify-image:unsigned
-    # no command; image should exist but be denied by policy
   restartPolicy: Never

@@ -1,21 +1,56 @@
 {
   "title": "Linkerd: mTLS + Canary with TrafficSplit",
-  "description": "Install Linkerd, mesh services, validate mTLS, and roll a 90/10 canary via SMI.",
+  "description": "Install Linkerd, mesh services, and roll a 90/10 canary via SMI.",
   "details": {
-    "intro": { "text": "00-intro.md" },
+    "intro": {
+      "text": "00-intro.md",
+      "code": "foreground.sh"
+    },
     "steps": [
-      { "title": "Install Linkerd", "text": "01-install.md" },
-      { "title": "Mesh and validate mTLS", "text": "02-mesh-and-verify-mtls.md" },
-      { "title": "Apply TrafficSplit", "text": "03-traffic-split.md" }
+      {
+        "title": "Install Linkerd",
+        "text": "01-install.md"
+      },
+      {
+        "title": "Mesh and validate mTLS",
+        "text": "02-mesh-and-verify-mtls.md"
+      },
+      {
+        "title": "Apply TrafficSplit",
+        "text": "03-traffic-split.md"
+      }
     ],
-    "finish": { "text": "99-finish.md" },
-    "assets": { "host01": [
-      { "file": "assets/setup.sh", "target": "/opt/setup.sh", "chmod": "+x", "command": "bash /opt/setup.sh" },
-      { "file": "assets/hello-v1.yaml", "target": "/opt/assets/hello-v1.yaml" },
-      { "file": "assets/hello-v2.yaml", "target": "/opt/assets/hello-v2.yaml" },
-      { "file": "assets/trafficsplit.yaml", "target": "/opt/assets/trafficsplit.yaml" },
-      { "file": "999-verify.sh", "target": "/opt/verify.sh", "chmod": "+x" }
-    ] }
+    "finish": {
+      "text": "99-finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "assets/setup.sh",
+          "target": "/opt/setup.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "assets/hello-v1.yaml",
+          "target": "/opt/assets/hello-v1.yaml"
+        },
+        {
+          "file": "assets/hello-v2.yaml",
+          "target": "/opt/assets/hello-v2.yaml"
+        },
+        {
+          "file": "assets/trafficsplit.yaml",
+          "target": "/opt/assets/trafficsplit.yaml"
+        },
+        {
+          "file": "999-verify.sh",
+          "target": "/opt/verify.sh",
+          "chmod": "+x"
+        }
+      ]
+    }
   },
-  "backend": { "imageid": "kubernetes" }
+  "backend": {
+    "imageid": "kubernetes"
+  }
 }

@@ -1,8 +1,6 @@
 apiVersion: split.smi-spec.io/v1alpha2
 kind: TrafficSplit
-metadata:
-  name: hello
-  namespace: demo
+metadata: { name: hello, namespace: demo }
 spec:
   service: hello
   backends:

@@ -1,22 +1,60 @@
 {
   "title": "Kyverno: Verify Images for Prod Namespaces",
-  "description": "Require Cosign-signed images (Kyverno sample key) and pin to digest for prod namespaces.",
+  "description": "Require cosign-signed images (Kyverno sample key) and pin to digest for prod namespaces.",
   "details": {
-    "intro": { "text": "00-intro.md" },
+    "intro": {
+      "text": "00-intro.md",
+      "code": "foreground.sh"
+    },
     "steps": [
-      { "title": "Install Kyverno", "text": "01-install-kyverno.md" },
-      { "title": "Apply verifyImages policy (prod only)", "text": "02-apply-policy.md" },
-      { "title": "Unsigned image should be denied", "text": "03-test-unsigned.md" },
-      { "title": "Signed image admitted and mutated to digest", "text": "04-test-signed.md" }
+      {
+        "title": "Install Kyverno",
+        "text": "01-install-kyverno.md"
+      },
+      {
+        "title": "Apply verifyImages policy (prod only)",
+        "text": "02-apply-policy.md"
+      },
+      {
+        "title": "Unsigned image should be denied",
+        "text": "03-test-unsigned.md"
+      },
+      {
+        "title": "Signed image admitted and mutated to digest",
+        "text": "04-test-signed.md"
+      }
     ],
-    "finish": { "text": "99-finish.md" },
-    "assets": { "host01": [
-      { "file": "assets/setup.sh", "target": "/opt/setup.sh", "chmod": "+x", "command": "bash /opt/setup.sh" },
-      { "file": "assets/policy-verify-image.yaml", "target": "/opt/assets/policy-verify-image.yaml" },
-      { "file": "assets/pod-unsigned.yaml", "target": "/opt/assets/pod-unsigned.yaml" },
-      { "file": "assets/pod-signed.yaml", "target": "/opt/assets/pod-signed.yaml" },
-      { "file": "999-verify.sh", "target": "/opt/verify.sh", "chmod": "+x" }
-    ] }
+    "finish": {
+      "text": "99-finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "assets/setup.sh",
+          "target": "/opt/setup.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "assets/policy-verify-image.yaml",
+          "target": "/opt/assets/policy-verify-image.yaml"
+        },
+        {
+          "file": "assets/pod-unsigned.yaml",
+          "target": "/opt/assets/pod-unsigned.yaml"
+        },
+        {
+          "file": "assets/pod-signed.yaml",
+          "target": "/opt/assets/pod-signed.yaml"
+        },
+        {
+          "file": "999-verify.sh",
+          "target": "/opt/verify.sh",
+          "chmod": "+x"
+        }
+      ]
+    }
   },
-  "backend": { "imageid": "kubernetes" }
+  "backend": {
+    "imageid": "kubernetes"
+  }
 }

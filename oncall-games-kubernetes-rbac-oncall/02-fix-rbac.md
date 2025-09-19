@@ -1,6 +1,4 @@
-Grant **read-only** verbs on core resources cluster-wide using a ClusterRole and ClusterRoleBinding targeting `system:serviceaccount:oncall:oncall`.
-Example to apply (least-privilege):
-
+Grant read-only verbs across namespaces:
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -16,12 +14,6 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata: {name: oncall-readonly}
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: oncall-readonly
-subjects:
-- kind: ServiceAccount
-  name: oncall
-  namespace: oncall
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: ClusterRole, name: oncall-readonly}
+subjects: [{kind: ServiceAccount, name: oncall, namespace: oncall}]
 ```

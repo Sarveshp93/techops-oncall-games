@@ -1,63 +1,43 @@
-
+apiVersion: v1
+kind: Namespace
+metadata: { name: datarec }
+---
 apiVersion: v1
 kind: PersistentVolume
-metadata:
-  name: dataapp-pv-0
+metadata: { name: dataapp-pv-0 }
 spec:
-  capacity:
-    storage: 1Gi
+  capacity: { storage: 1Gi }
   accessModes: ["ReadWriteOnce"]
-  hostPath:
-    path: /mnt/data/dataapp-0
+  hostPath: { path: /mnt/data/dataapp-0 }
   claimRef:
     namespace: datarec
     name: data-dataapp-0
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: datarec
----
 apiVersion: apps/v1
 kind: StatefulSet
-metadata:
-  name: dataapp
-  namespace: datarec
+metadata: { name: dataapp, namespace: datarec }
 spec:
   serviceName: "dataapp"
   replicas: 1
-  selector:
-    matchLabels:
-      app: dataapp
+  selector: { matchLabels: { app: dataapp } }
   template:
-    metadata:
-      labels:
-        app: dataapp
+    metadata: { labels: { app: dataapp } }
     spec:
       containers:
       - name: app
         image: busybox:1.36
         command: ["sh","-c","sleep 3650d"]
-        volumeMounts:
-        - name: data
-          mountPath: /data
+        volumeMounts: [{ name: data, mountPath: /data }]
   volumeClaimTemplates:
-  - metadata:
-      name: data
+  - metadata: { name: data }
     spec:
       accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 1Gi
+      resources: { requests: { storage: 1Gi } }
 ---
 apiVersion: v1
 kind: Service
-metadata:
-  name: dataapp
-  namespace: datarec
+metadata: { name: dataapp, namespace: datarec }
 spec:
   clusterIP: None
-  selector:
-    app: dataapp
-  ports:
-  - port: 80
+  selector: { app: dataapp }
+  ports: [{ port: 80 }]

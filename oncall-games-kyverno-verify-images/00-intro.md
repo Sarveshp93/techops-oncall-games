@@ -1,1 +1,1 @@
-Require that images in **prod namespaces** are Cosign-signed (using Kyverno's sample key) and are **pinned to immutable digests**.
+Require images in **prod** to be cosign-signed and auto-pinned to digest.

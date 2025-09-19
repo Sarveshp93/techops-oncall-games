@@ -2,18 +2,47 @@
   "title": "K8s: StatefulSet PVC Recovery",
   "description": "Break and recover a StatefulSet while preserving data on the mounted PVC.",
   "details": {
-    "intro": { "text": "00-intro.md" },
+    "intro": {
+      "text": "00-intro.md",
+      "code": "foreground.sh"
+    },
     "steps": [
-      { "title": "Seed data on the volume", "text": "01-seed.md" },
-      { "title": "Delete the Pod and verify data", "text": "02-delete-pod.md" },
-      { "title": "Scale down to 0 and back to 1", "text": "03-scale-recreate.md" }
+      {
+        "title": "Seed data on the volume",
+        "text": "01-seed.md"
+      },
+      {
+        "title": "Delete the Pod and verify data",
+        "text": "02-delete-pod.md"
+      },
+      {
+        "title": "Scale down to 0 and back to 1",
+        "text": "03-scale-recreate.md"
+      }
     ],
-    "finish": { "text": "99-finish.md" },
-    "assets": { "host01": [
-      { "file": "assets/setup.sh", "target": "/opt/setup.sh", "chmod": "+x", "command": "bash /opt/setup.sh" },
-      { "file": "assets/statefulset.yaml", "target": "/opt/assets/statefulset.yaml" },
-      { "file": "999-verify.sh", "target": "/opt/verify.sh", "chmod": "+x" }
-    ] }
+    "finish": {
+      "text": "99-finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "assets/setup.sh",
+          "target": "/opt/setup.sh",
+          "chmod": "+x"
+        },
+        {
+          "file": "assets/statefulset.yaml",
+          "target": "/opt/assets/statefulset.yaml"
+        },
+        {
+          "file": "999-verify.sh",
+          "target": "/opt/verify.sh",
+          "chmod": "+x"
+        }
+      ]
+    }
   },
-  "backend": { "imageid": "kubernetes" }
+  "backend": {
+    "imageid": "kubernetes"
+  }
 }
