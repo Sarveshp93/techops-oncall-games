@@ -1,6 +1,6 @@
 {
-  "title": "K8s: StatefulSet PVC Recovery",
-  "description": "Break and recover a StatefulSet while preserving data on the mounted PVC.",
+  "title": "K8s: NetworkPolicy Lockdown Triage",
+  "description": "A recent lockdown broke cross-namespace traffic. Diagnose and craft the minimal allow rule.",
   "details": {
     "intro": {
       "text": "00-intro.md",
@@ -8,16 +8,16 @@
     },
     "steps": [
       {
-        "title": "Seed data on the volume",
-        "text": "01-seed.md"
+        "title": "Reproduce the failure",
+        "text": "01-reproduce.md"
       },
       {
-        "title": "Delete the Pod and verify data",
-        "text": "02-delete-pod.md"
+        "title": "Write the minimal allow policy",
+        "text": "02-fix.md"
       },
       {
-        "title": "Scale down to 0 and back to 1",
-        "text": "03-scale-recreate.md"
+        "title": "Harden and retest",
+        "text": "03-harden.md"
       }
     ],
     "finish": {
@@ -46,8 +46,16 @@
           "chmod": "+x"
         },
         {
-          "file": "assets/statefulset.yaml",
-          "target": "/opt/assets/statefulset.yaml"
+          "file": "assets/app.yaml",
+          "target": "/opt/assets/app.yaml"
+        },
+        {
+          "file": "assets/np-default-deny.yaml",
+          "target": "/opt/assets/np-default-deny.yaml"
+        },
+        {
+          "file": "assets/np-solution.yaml",
+          "target": "/opt/assets/np-solution.yaml"
         }
       ]
     }

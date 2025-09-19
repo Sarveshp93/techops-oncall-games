@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata: { name: team-a }
+---
+apiVersion: v1
+kind: Namespace
+metadata: { name: team-b }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: client, namespace: team-a, labels: {app: client} }
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: client}}
+  template:
+    metadata: {labels: {app: client}}
+    spec:
+      containers:
+      - name: curl
+        image: quay.io/curl/curl:8.8.0
+        command: ["sleep","3650d"]
+---
+apiVersion: v1
+kind: Service
+metadata: { name: echoserver, namespace: team-b, labels: {app: echoserver} }
+spec:
+  selector: {app: echoserver}
+  ports: [{name: http, port: 8080, targetPort: 8080}]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: echoserver, namespace: team-b, labels: {app: echoserver} }
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: echoserver}}
+  template:
+    metadata: {labels: {app: echoserver}}
+    spec:
+      containers:
+      - name: echoserver
+        image: ealen/echo-server:0.7.0
+        ports: [{containerPort: 8080}]
